@@ -1,0 +1,6 @@
+
+**This is for computing from one range to another. EX: [0,1280] -> [-16,16]
+OldRange = (OldMax - OldMin)
+NewRange = (NewMax - NewMin)
+NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin
+new_value = ( (old_value - old_min) / (old_max - old_min) ) * (new_max - new_min) + new_min
