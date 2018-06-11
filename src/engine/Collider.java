@@ -225,10 +225,10 @@ public class Collider {
     public void update() {
         this.position = entity.position;
 
-        corners[0] = new Vector3(-(this.width / 2), -(this.height / 2), 0f).add(position);
-        corners[1] = new Vector3(-(this.width / 2), +(this.height / 2), 0f).add(position);
-        corners[2] = new Vector3(+(this.width / 2), +(this.height / 2), 0f).add(position);
-        corners[3] = new Vector3(+(this.width / 2), -(this.height / 2), 0f).add(position);
+        corners[0] = (new Vector3(-(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
+        corners[1] = (new Vector3(-(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
+        corners[2] = (new Vector3(+(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
+        corners[3] = (new Vector3(+(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
     }
 
     public void render() {

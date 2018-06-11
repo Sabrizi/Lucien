@@ -72,6 +72,7 @@ public class Player extends Entity {
 
         collider = new Collider(this, this.width - 2f, this.height - .25f);
 //        collider = new Collider(this, -1f, 5f, 2f, -3f);
+        this.rot = 10;
     }
 
 
@@ -79,6 +80,7 @@ public class Player extends Entity {
     public void update(float interval) {
         //Player movement
 //        velocity.y -= gravity;
+
         if (actionFrames == 0) {
             if (velocity.x < 0) {
                 state = PlayerState.RUNNING;
@@ -91,6 +93,7 @@ public class Player extends Entity {
             }
 
             position = position.add(velocity.scale(speed));
+//            position = position.rotate(rot);
             collider.update();
 
             for(Entity e : Lucien.level){
@@ -147,7 +150,7 @@ public class Player extends Entity {
         shader.enable();
         //Set uniforms
         ml_matrix = Matrix4.translate(position);
-        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(rot));
+//        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(rot));
         ml_matrix = ml_matrix.multiply(Matrix4.scale(flip, 1f, 1f));
 
         shader.setUniformMat4("ml_matrix", ml_matrix);
