@@ -50,12 +50,6 @@ public class Matrix4 {
         float frustumLength = far - near;
 
         Matrix4 result = new Matrix4();
-//        projectionMatrix.m00 = xScale;
-//        projectionMatrix.m11 = yScale;
-//        projectionMatrix.m22 = -((far+ near) / frustumLength);
-//        projectionMatrix.m23 = -1;
-//        projectionMatrix.m32 = -((2* near* far) / frustumLength);
-//        projectionMatrix.m33 = 0;
 
         result.elements[0 + 0 * 4] = xScale;
         result.elements[1 + 1 * 4] = yScale;
@@ -63,42 +57,6 @@ public class Matrix4 {
         result.elements[3 + 2 * 4] = -1.0f;
         result.elements[2 + 3 * 4] = -((2.0f * near * far) / frustumLength);
         result.elements[3 + 3 * 4] = 0.0f;
-
-
-//        Matrix4 result = Matrix4.identity();
-//
-//        float top = near * (float) (Math.tan(Math.toRadians(fov)));
-//        float bottom = -top;
-//        float right = top * aspectRatio;
-//        float left = -right;
-//
-//        result.elements[0 + 0 * 4] = (2.0f * near) / (right - left);
-//        result.elements[0 + 2 * 4] = (right + left) / (right - left);
-//        result.elements[1 + 1 * 4] = (2.0f * near) / (top - bottom);
-//        result.elements[1 + 2 * 4] = (top + bottom) / (top - bottom);
-//        result.elements[2 + 2 * 4] = -((far + near) / (far - near));
-//        result.elements[2 + 3 * 4] = -((2.0f * far * near) / (far - near));
-//        result.elements[3 + 2 * 4] = -1.0f;
-//        result.elements[3 + 3 * 4] = 0.0f;
-
-
-//        float xScale = 1.0f /(float)(aspectRatio * Math.tan(Math.toRadians(fov / 2.0f)));
-//        float yScale = 1.0f/ (float)Math.tan(Math.toRadians(fov / 2.0f));
-//
-//        result.elements[0 + 0 * 4] = xScale;
-//        result.elements[1 + 1 * 4] = yScale;
-//        result.elements[2 + 2 * 4] = -(far + near) / (far - near);
-//        result.elements[2 + 3 * 4] = -(2.0f*far*near) / (far - near);
-//        result.elements[3 + 2 * 4] = 1;
-
-//        float[] m = {
-//                xScale, 0, 0, 0,rotation matrix around an arbitrary vector
-//                0, yScale, 0, 0,
-//                0, 0, (far + near) / nearmfar, -1,
-//                0, 0, (2*far*near) / nearmfar, 0
-//        };
-
-//        result.elements = m;
         return result;
     }
 

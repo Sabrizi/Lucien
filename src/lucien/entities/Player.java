@@ -9,9 +9,6 @@ import lucien.Camera;
 import lucien.Lucien;
 import lucien.enums.PlayerAction;
 import lucien.enums.PlayerState;
-import lucien.levels.Platform;
-
-import java.util.ArrayList;
 
 public class Player extends Entity {
 
@@ -32,10 +29,9 @@ public class Player extends Entity {
     public int actionFrames = 0;
 
     public Player() {
-        position = new Vector3(0.0f, 3.0f, 0.9f);
+        position = new Vector3(0.0f, 0.0f, 0.9f);
         width = 5.0f;
         height = 5.0f;
-//        scale = new Vector3(width, height, 0);
 
         float[] vertices = new float[]{
                 -width / 2.0f, -height / 2.0f, 0.0f,
@@ -67,7 +63,6 @@ public class Player extends Entity {
 
         Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
         shader.setUniformMat4("pr_matrix", pr_matrix);
-//        shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
         shader.setUniform1i("tex", 1);
 
         mesh = new Mesh(vertices, indices, tcs);
@@ -91,9 +86,8 @@ public class Player extends Entity {
             } else {
                 state = PlayerState.IDLE;
             }
-
-            position = position.add(velocity.scale(speed));
-//            position = position.rotate(rot);
+        }
+            position = position.add((velocity = velocity.scale(speed)));
             collider.update();
 
             for(Entity e : Lucien.level){
@@ -103,7 +97,8 @@ public class Player extends Entity {
                     collider.update();
                 }
             }
-        }
+
+        Camera.update();
 
         //Player animation updates
         updateStep++;
@@ -127,7 +122,6 @@ public class Player extends Entity {
                     break;
             }
         }
-        Camera.update();
     }
 
     @Override
@@ -139,6 +133,7 @@ public class Player extends Entity {
         ml_matrix = ml_matrix.multiply(Matrix4.scale(flip, 1f, 1f));
 
         shader.setUniformMat4("ml_matrix", ml_matrix);
+        shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
 //        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rot)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
         texture.bind();
         mesh.render();

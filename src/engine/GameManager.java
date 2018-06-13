@@ -71,13 +71,13 @@ public class GameManager implements Runnable {
                 update();
                 updates++;
                 delta--;
+                render();
+                frames++;
             }
-            render();
-            frames++;
 
             if (System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-//                System.out.println("Updates: " + updates + " || FPS: " + frames);
+                System.out.println("Updates: " + updates + " || FPS: " + frames);
                 updates = 0;
                 frames = 0;
             }

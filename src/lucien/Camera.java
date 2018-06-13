@@ -1,32 +1,24 @@
 package lucien;
 
-import engine.Entity;
 import engine.math.Matrix4;
+import engine.math.Vector3;
 import lucien.entities.Player;
 
 public class Camera {
 
     private static Player player;
-    private static Matrix4 vwMatrix;
+    private static Vector3 position;
 
     public static void init(Player _player){
         player = _player;
-        vwMatrix = createMatrix();
+        position = player.getPosition();
     }
 
     public static void update(){
-        centerOnPlayer();
-    }
-
-    public static void centerOnPlayer(){
-        vwMatrix = createMatrix();
-    }
-
-    private static Matrix4 createMatrix(){
-        return Matrix4.translate(player.getPosition().scale(-1f));
+        position = player.getPosition();
     }
 
     public static Matrix4 getMvMatrix() {
-        return vwMatrix;
+        return Matrix4.translate(new Vector3(-position.x, -position.y, 0f));
     }
 }

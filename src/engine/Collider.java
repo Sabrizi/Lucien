@@ -6,6 +6,7 @@ import engine.graphics.Shader;
 import engine.math.Matrix4;
 import engine.math.Vector2;
 import engine.math.Vector3;
+import lucien.Camera;
 import lucien.entities.Player;
 import lucien.levels.Platform;
 
@@ -100,7 +101,7 @@ public class Collider {
         }
 
         float scale = overlap / smallest.dot(smallest);
-        Vector3 mtv = smallest.scale(scale + 1.0E-10f);
+        Vector3 mtv = smallest.scale(scale + 1.0E-3f);
         Vector3 dir = c2.position.subtract(c1.position);
 
         if (dir.dot(mtv) >= 0) {
@@ -112,6 +113,7 @@ public class Collider {
 
 
     //TODO: Make this work with generic stuff
+    //Maybe don't have to since i'm just using the getCollission method in the player update
     public static ArrayList<Collision> getCollisions(Collider player, ArrayList<Entity> level) {
         ArrayList<Collision> collisions = new ArrayList<>();
         for (Entity p : level) {
@@ -245,12 +247,15 @@ public class Collider {
         corners[1] = new Vector3(left, top, 0f).rotate(entity.rot).add(position);
         corners[2] = new Vector3(right, top, 0f).rotate(entity.rot).add(position);
         corners[3] = new Vector3(right, bottom, 0f).rotate(entity.rot).add(position);
+    }
 
+    public void update(Vector3 vector) {
+        this.position = vector;
 
-//        corners[0] = (new Vector3(-(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
-//        corners[1] = (new Vector3(-(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
-//        corners[2] = (new Vector3(+(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
-//        corners[3] = (new Vector3(+(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
+        corners[0] = new Vector3(left, bottom, 0f).rotate(entity.rot).add(position);
+        corners[1] = new Vector3(left, top, 0f).rotate(entity.rot).add(position);
+        corners[2] = new Vector3(right, top, 0f).rotate(entity.rot).add(position);
+        corners[3] = new Vector3(right, bottom, 0f).rotate(entity.rot).add(position);
     }
 
     public void render() {
@@ -261,6 +266,7 @@ public class Collider {
 //            ml_matrix = ml_matrix.multiply(Matrix4.scale(scale.x, scale.y, scale.z));
 
         shader.setUniformMat4("ml_matrix", ml_matrix);
+        shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
 //        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rot)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
 //            shader.setUniformMat4("ml_matrix", entity.getModelMatrix());
         mesh.setRenderMethod(GL_LINE_LOOP);

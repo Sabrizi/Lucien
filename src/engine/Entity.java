@@ -20,11 +20,10 @@ public abstract class Entity {
     protected Vector3 velocity = new Vector3();
     protected Shader shader;
     protected float rot = 0;
-    protected Vector3 scale = new Vector3(1, 1, 1);
     protected float width;
     protected float height;
 
-    public static boolean renderCollider = false;
+    public static boolean renderCollider = true;
 
     public abstract void render();
 
@@ -32,14 +31,6 @@ public abstract class Entity {
 
     public Vector3 getPosition() {
         return position;
-    }
-
-    public Vector3 getScale() {
-        return scale;
-    }
-
-    public void setScale(Vector3 scale) {
-        this.scale = scale;
     }
 
     public Collider getCollider() {

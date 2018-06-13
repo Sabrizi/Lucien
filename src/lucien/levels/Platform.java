@@ -16,7 +16,6 @@ public class Platform extends Entity {
         this.position = position;
         width = w;
         height = h;
-        this.scale = new Vector3(width, height, 0);
 
         float[] vertices = new float[]{
                 -width / 2.0f, -height / 2.0f, 0.0f,
@@ -24,13 +23,6 @@ public class Platform extends Entity {
                 width / 2.0f, height / 2.0f, 0.0f,
                 width / 2.0f, -height / 2.0f, 0.0f,
         };
-
-//        float[] vertices = new float[]{
-//                -1, -1, 0.0f,
-//                -1,  1, 0.0f,
-//                 1,  1, 0.0f,
-//                 1, -1, 0.0f,
-//        };
 
         byte[] indices = new byte[]{
                 0, 1, 2,
@@ -62,14 +54,12 @@ public class Platform extends Entity {
         shader.enable();
         //Set uniforms
         ml_matrix = Matrix4.translate(position);
-        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(rot));
-//        ml_matrix = ml_matrix.multiply(Matrix4.scale(scale.x, scale.y, scale.z));
+//        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(rot));
 
         shader.setUniformMat4("ml_matrix", ml_matrix);
         shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
 
 
-//        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rot)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
 //        texture.bind();
         mesh.render();
 //        texture.unbind();
@@ -81,6 +71,7 @@ public class Platform extends Entity {
 
     @Override
     public void update(float interval) {
+//        this.position = position.subtract(Camera.getOffset());
         collider.update();
 //        this.collider.center = this.position;
     }
