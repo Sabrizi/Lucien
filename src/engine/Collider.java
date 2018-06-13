@@ -19,6 +19,7 @@ public class Collider {
 
     public Vector3 position;
     float width, height;
+    float top, bottom, left, right;
     Vector3[] corners;
     Entity entity;
 
@@ -113,7 +114,7 @@ public class Collider {
     //TODO: Make this work with generic stuff
     public static ArrayList<Collision> getCollisions(Collider player, ArrayList<Entity> level) {
         ArrayList<Collision> collisions = new ArrayList<>();
-        for(Entity p : level){
+        for (Entity p : level) {
             collisions.add(getCollision(player, p.collider));
         }
         return collisions;
@@ -154,12 +155,22 @@ public class Collider {
         this.width = w;
         this.height = h;
 
+        this.left = -this.width / 2f;
+        this.bottom = -this.height / 2f;
+        this.right = this.width / 2f;
+        this.top = this.height / 2f;
+
         corners = new Vector3[4];
 
-        corners[0] = new Vector3(-(this.width / 2), -(this.height / 2), 0f);
-        corners[1] = new Vector3(-(this.width / 2), (this.height / 2), 0f);
-        corners[2] = new Vector3((this.width / 2), (this.height / 2), 0f);
-        corners[3] = new Vector3((this.width / 2), -(this.height / 2), 0f);
+        corners[0] = new Vector3(left, bottom, entity.position.z);
+        corners[1] = new Vector3(left, top, entity.position.z);
+        corners[2] = new Vector3(right, top, entity.position.z);
+        corners[3] = new Vector3(right, bottom, entity.position.z);
+
+//        corners[0] = new Vector3(-(this.width / 2), -(this.height / 2), 0f);
+//        corners[1] = new Vector3(-(this.width / 2), (this.height / 2), 0f);
+//        corners[2] = new Vector3((this.width / 2), (this.height / 2), 0f);
+//        corners[3] = new Vector3((this.width / 2), -(this.height / 2), 0f);
 
         float[] vertices = new float[]{
                 corners[0].x, corners[0].y, 0.0f,
@@ -190,6 +201,11 @@ public class Collider {
         this.position = entity.position;
         this.width = right - left;
         this.height = top - bottom;
+
+        this.left = left;
+        this.bottom = bottom;
+        this.right = right;
+        this.top = top;
 
         corners = new Vector3[4];
 
@@ -225,10 +241,16 @@ public class Collider {
     public void update() {
         this.position = entity.position;
 
-        corners[0] = (new Vector3(-(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
-        corners[1] = (new Vector3(-(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
-        corners[2] = (new Vector3(+(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
-        corners[3] = (new Vector3(+(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
+        corners[0] = new Vector3(left, bottom, 0f).rotate(entity.rot).add(position);
+        corners[1] = new Vector3(left, top, 0f).rotate(entity.rot).add(position);
+        corners[2] = new Vector3(right, top, 0f).rotate(entity.rot).add(position);
+        corners[3] = new Vector3(right, bottom, 0f).rotate(entity.rot).add(position);
+
+
+//        corners[0] = (new Vector3(-(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
+//        corners[1] = (new Vector3(-(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
+//        corners[2] = (new Vector3(+(this.width / 2), +(this.height / 2), 0f).rotate(entity.rot).add(position));
+//        corners[3] = (new Vector3(+(this.width / 2), -(this.height / 2), 0f).rotate(entity.rot).add(position));
     }
 
     public void render() {

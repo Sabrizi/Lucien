@@ -5,6 +5,7 @@ import engine.Entity;
 import engine.graphics.*;
 import engine.math.Matrix4;
 import engine.math.Vector3;
+import lucien.Camera;
 import lucien.Lucien;
 import lucien.enums.PlayerAction;
 import lucien.enums.PlayerState;
@@ -66,13 +67,12 @@ public class Player extends Entity {
 
         Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
         shader.setUniformMat4("pr_matrix", pr_matrix);
+//        shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
         shader.setUniform1i("tex", 1);
 
         mesh = new Mesh(vertices, indices, tcs);
 
-        collider = new Collider(this, this.width - 2f, this.height - .25f);
-//        collider = new Collider(this, -1f, 5f, 2f, -3f);
-        this.rot = 10;
+        collider = new Collider(this, -1.25f, 1.25f, 1.85f, -2.38f);
     }
 
 
@@ -103,21 +103,6 @@ public class Player extends Entity {
                     collider.update();
                 }
             }
-
-//            collider.update();
-//
-//            ArrayList<Collision> collisions = Collider.getCollisions(this.collider, Lucien.level);
-//
-//            /*TODO: This causes issues when colliding with two objects that return mtvs
-//                that point in the same direction
-//             */
-//            for(Collision c : collisions){
-//                if (c != null) {
-//                    this.position = this.position.add(c.translationVector);
-//                    collider.update();
-//                }
-//            }
-
         }
 
         //Player animation updates
@@ -142,7 +127,7 @@ public class Player extends Entity {
                     break;
             }
         }
-
+        Camera.update();
     }
 
     @Override
@@ -160,7 +145,9 @@ public class Player extends Entity {
         texture.unbind();
         shader.disable();
 
-        collider.render();
+        if(collider != null && renderCollider) {
+            collider.render();
+        }
     }
 
     public PlayerAction getAction() {

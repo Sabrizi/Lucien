@@ -7,6 +7,7 @@ import engine.graphics.Shader;
 import engine.graphics.Texture;
 import engine.math.Matrix4;
 import engine.math.Vector3;
+import lucien.Camera;
 
 public class Platform extends Entity {
 
@@ -65,6 +66,7 @@ public class Platform extends Entity {
 //        ml_matrix = ml_matrix.multiply(Matrix4.scale(scale.x, scale.y, scale.z));
 
         shader.setUniformMat4("ml_matrix", ml_matrix);
+        shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
 
 
 //        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rot)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
@@ -72,7 +74,9 @@ public class Platform extends Entity {
         mesh.render();
 //        texture.unbind();
         shader.disable();
-        collider.render();
+        if(collider != null && renderCollider) {
+            collider.render();
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package lucien;
 
 import engine.Entity;
+import engine.GameManager;
 import engine.graphics.Shader;
 import engine.graphics.Window;
 import engine.math.Vector3;
@@ -14,6 +15,7 @@ import engine.interfaces.IGameLogic;
 import lucien.levels.Platform;
 
 
+import java.awt.*;
 import java.util.ArrayList;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -33,6 +35,8 @@ public class Lucien implements IGameLogic {
     private float joystickDeadZone = 0.3f;
 
     public Player player;
+    public static GameManager manager;
+
 
     //TODO: Remove this later. It's just for collision testing right now
     public static ArrayList<Entity> level = new ArrayList<>();
@@ -49,7 +53,7 @@ public class Lucien implements IGameLogic {
         loadEntities();
 
         glActiveTexture(GL_TEXTURE1);
-
+        Camera.init(player);
     }
 
     private void loadEntities() {
@@ -109,12 +113,12 @@ public class Lucien implements IGameLogic {
         if(usingGamePad) {
             checkGamePad();
         } else {
-            checkKeyBoard();
+            checkKeyBoard(window);
         }
         checkMouse();
     }
 
-    private void checkKeyBoard() {
+    private void checkKeyBoard(Window window) {
         Vector3 velocity = new Vector3();
         if (KeyBoardHandler.isKeyDown(GLFW_KEY_W)) {
             velocity.y = 1.0f;
@@ -133,6 +137,14 @@ public class Lucien implements IGameLogic {
         }
 
         player.setVelocity(velocity.normalize());
+
+        if(KeyBoardHandler.isKeyDown(GLFW_KEY_ESCAPE)){
+            glfwSetWindowShouldClose(window.getWindow(), true);
+        }
+
+        if(KeyBoardHandler.isKeyDown(GLFW_KEY_LEFT_CONTROL) && KeyBoardHandler.isKeyDown(GLFW_KEY_C)){
+            Entity.renderCollider = !Entity.renderCollider;
+        }
     }
 
     private void checkMouse() {
