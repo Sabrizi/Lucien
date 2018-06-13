@@ -169,11 +169,6 @@ public class Collider {
         corners[2] = new Vector3(right, top, entity.position.z);
         corners[3] = new Vector3(right, bottom, entity.position.z);
 
-//        corners[0] = new Vector3(-(this.width / 2), -(this.height / 2), 0f);
-//        corners[1] = new Vector3(-(this.width / 2), (this.height / 2), 0f);
-//        corners[2] = new Vector3((this.width / 2), (this.height / 2), 0f);
-//        corners[3] = new Vector3((this.width / 2), -(this.height / 2), 0f);
-
         float[] vertices = new float[]{
                 corners[0].x, corners[0].y, 0.0f,
                 corners[1].x, corners[1].y, 0.0f,

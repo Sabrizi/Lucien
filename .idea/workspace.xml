@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="89755b89-7fcb-44f0-9130-c9a109fea0ef" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lucien/engine/Collider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lucien/engine/Collider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lucien/engine/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lucien/engine/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lucien/lucien/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lucien/lucien/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lucien/lucien/entities/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lucien/lucien/entities/Player$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lucien/lucien/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lucien/lucien/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lucien/lucien/levels/Platform.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lucien/lucien/levels/Platform.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Collider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/math/Matrix4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/math/Matrix4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucien/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucien/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucien/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucien/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucien/levels/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucien/levels/Platform.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +17,8 @@
       <file leaf-file-name="Lucien.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lucien/Lucien.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+            <state relative-caret-position="1649">
+              <caret line="148" selection-start-line="148" selection-end-line="148" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#loadEntities#0;class#Lucien#0" />
@@ -39,7 +26,6 @@
                 <element signature="method#loadShaders#0;class#Lucien#0" />
                 <element signature="method#initGamePad#0;class#Lucien#0" />
                 <element signature="method#input#0;class#Lucien#0" />
-                <element signature="method#checkKeyBoard#0;class#Lucien#0" />
                 <element signature="method#checkMouse#0;class#Lucien#0" />
                 <element signature="method#checkGamePad#0;class#Lucien#0" />
               </folding>
@@ -47,17 +33,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lucien/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="1054">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Player#0;class#Player#0" />
                 <element signature="method#update#0;class#Player#0" />
                 <element signature="method#render#0;class#Player#0" />
-                <marker date="1528912544798" expanded="false" signature="3076:3641" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -66,7 +50,7 @@
       <file leaf-file-name="Collider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/Collider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
+            <state relative-caret-position="595">
               <caret line="115" column="92" selection-start-line="115" selection-start-column="92" selection-end-line="115" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,12 +64,10 @@
       <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+            <state relative-caret-position="1598">
+              <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2538#2539#0" expanded="true" />
-                <element signature="e#2572#2573#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,7 +76,7 @@
       <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lucien/levels/Platform.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
+            <state relative-caret-position="952">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -106,35 +88,36 @@
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
+            <state relative-caret-position="323">
               <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lucien/Camera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="408">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#477#478#0" expanded="true" />
-                <element signature="e#560#561#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#523#524#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Matrix4.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/math/Matrix4.java">
+      <file leaf-file-name="Vector3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/math/Vector3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-930">
-              <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+            <state relative-caret-position="629">
+              <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#700#701#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,6 +142,7 @@
       <find>velocity</find>
       <find>println</find>
       <find>Vector3</find>
+      <find>merge</find>
     </findStrings>
     <replaceStrings>
       <replace>Vector4</replace>
@@ -208,13 +192,13 @@
         <option value="$PROJECT_DIR$/src/lucien/Lucien.java" />
         <option value="$PROJECT_DIR$/src/engine/graphics/Collision.java" />
         <option value="$PROJECT_DIR$/src/lucien/shaders/player.vert" />
-        <option value="$PROJECT_DIR$/src/engine/Entity.java" />
         <option value="$PROJECT_DIR$/src/lucien/Camera.java" />
         <option value="$PROJECT_DIR$/src/engine/math/Matrix4.java" />
         <option value="$PROJECT_DIR$/src/lucien/levels/Platform.java" />
+        <option value="$PROJECT_DIR$/src/engine/Entity.java" />
+        <option value="$PROJECT_DIR$/src/lucien/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/engine/GameManager.java" />
         <option value="$PROJECT_DIR$/src/engine/Collider.java" />
-        <option value="$PROJECT_DIR$/src/lucien/entities/Player.java" />
       </list>
     </option>
   </component>
@@ -289,8 +273,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,7 +287,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -413,12 +397,12 @@
       <option name="presentableId" value="Default" />
       <updated>1527635101825</updated>
       <workItem from="1527635111641" duration="120455000" />
-      <workItem from="1528911756782" duration="778000" />
+      <workItem from="1528911756782" duration="2378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121233000" />
+    <option name="totallyTimeSpent" value="123112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -426,50 +410,73 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32934782" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229167" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32943678" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="IvyIDEA" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="bottom" id="Message" order="5" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32943678" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -478,7 +485,7 @@
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3995749" />
       <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.32943678" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info id="Favorites" order="4" side_tool="true" />
@@ -630,8 +637,6 @@ foo = foo.add(position);</expression-string>
           <caret line="106" column="16" lean-forward="true" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2538#2539#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -659,10 +664,10 @@ foo = foo.add(position);</expression-string>
           <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -692,10 +697,6 @@ foo = foo.add(position);</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#216#217#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,9 +748,6 @@ foo = foo.add(position);</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,18 +762,6 @@ foo = foo.add(position);</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#load#0;class#Texture#0" />
-            <element signature="e#2100#2101#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-            <element signature="e#2160#2161#0" expanded="true" />
-            <element signature="e#2192#2193#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2273#2274#0" expanded="true" />
-            <element signature="e#2158#2159#0" expanded="true" />
-            <element signature="e#2188#2189#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,9 +769,6 @@ foo = foo.add(position);</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -842,11 +825,6 @@ foo = foo.add(position);</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2650#2651#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -875,10 +853,6 @@ foo = foo.add(position);</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-          <folding>
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -893,16 +867,6 @@ foo = foo.add(position);</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/input/KeyBoardHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -927,24 +891,6 @@ foo = foo.add(position);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lucien/Lucien.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadEntities#0;class#Lucien#0" />
-            <element signature="method#loadUniforms#0;class#Lucien#0" />
-            <element signature="method#loadShaders#0;class#Lucien#0" />
-            <element signature="method#initGamePad#0;class#Lucien#0" />
-            <element signature="method#input#0;class#Lucien#0" />
-            <element signature="method#checkKeyBoard#0;class#Lucien#0" />
-            <element signature="method#checkMouse#0;class#Lucien#0" />
-            <element signature="method#checkGamePad#0;class#Lucien#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/math/Matrix4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-930">
@@ -955,45 +901,12 @@ foo = foo.add(position);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lucien/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lucien/levels/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
+        <state relative-caret-position="952">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2538#2539#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1008,22 +921,10 @@ foo = foo.add(position);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/Collider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="115" column="92" selection-start-line="115" selection-start-column="92" selection-end-line="115" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getCollision#0;class#Collider#0" />
-            <element signature="method#getCollisions#0;class#Collider#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/math/Vector3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="629">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
           <folding>
             <element signature="e#614#615#0" expanded="true" />
             <element signature="e#700#701#0" expanded="true" />
@@ -1031,16 +932,81 @@ foo = foo.add(position);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lucien/entities/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/input/KeyBoardHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lucien/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Player#0;class#Player#0" />
             <element signature="method#update#0;class#Player#0" />
             <element signature="method#render#0;class#Player#0" />
-            <marker date="1528912544798" expanded="false" signature="3076:3641" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lucien/Lucien.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadEntities#0;class#Lucien#0" />
+            <element signature="method#loadUniforms#0;class#Lucien#0" />
+            <element signature="method#loadShaders#0;class#Lucien#0" />
+            <element signature="method#initGamePad#0;class#Lucien#0" />
+            <element signature="method#input#0;class#Lucien#0" />
+            <element signature="method#checkMouse#0;class#Lucien#0" />
+            <element signature="method#checkGamePad#0;class#Lucien#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lucien/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/Collider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="115" column="92" selection-start-line="115" selection-start-column="92" selection-end-line="115" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getCollision#0;class#Collider#0" />
+            <element signature="method#getCollisions#0;class#Collider#0" />
           </folding>
         </state>
       </provider>

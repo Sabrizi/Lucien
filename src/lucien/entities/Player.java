@@ -67,7 +67,7 @@ public class Player extends Entity {
 
         mesh = new Mesh(vertices, indices, tcs);
 
-        collider = new Collider(this, -1.25f, 1.25f, 1.85f, -2.38f);
+        collider = new Collider(this, -1.25f, 1.25f, 1.65f, -2.38f);
     }
 
 
