@@ -62,6 +62,7 @@ public class Player extends Entity {
         dashAnimation = new SpriteAnimation(24, 28, shader, texture);
 
         Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
+//        Matrix4 pr_matrix = Matrix4.perspective(70, 16f/9f, -1.0f, 100f);
         shader.setUniformMat4("pr_matrix", pr_matrix);
         shader.setUniform1i("tex", 1);
 
