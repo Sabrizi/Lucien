@@ -145,6 +145,10 @@ public class Lucien implements IGameLogic {
         if(KeyBoardHandler.isKeyDown(GLFW_KEY_LEFT_CONTROL) && KeyBoardHandler.isKeyDown(GLFW_KEY_C)){
             Entity.renderCollider = !Entity.renderCollider;
         }
+
+        if(KeyBoardHandler.isKeyDown(GLFW_KEY_T)){
+            Camera.addTrauma(0.1f);
+        }
     }
 
     private void checkMouse() {
