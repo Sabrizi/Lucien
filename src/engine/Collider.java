@@ -22,7 +22,7 @@ public class Collider {
     public Vector3 position;
     float width, height;
     float top, bottom, left, right;
-    Vector3[] corners;
+    public Vector3[] corners;
     Entity entity;
 
     Shader shader;

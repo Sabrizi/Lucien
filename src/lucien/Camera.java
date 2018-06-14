@@ -47,6 +47,7 @@ public class Camera {
     }
 
     public static Matrix4 getMvMatrix() {
-        return Matrix4.translate(new Vector3(-position.x, -position.y, position.z).add(shakeyCamOffset)).multiply(Matrix4.rotateZ(shakeyCamAngle));
+        return Matrix4.rotateZ(shakeyCamAngle).multiply(Matrix4.translate(new Vector3(-position.x, -position.y, position.z).add(shakeyCamOffset)));
+//        return Matrix4.translate(new Vector3(-position.x, -position.y, position.z).add(shakeyCamOffset)).multiply(Matrix4.rotateZ(shakeyCamAngle));
     }
 }
