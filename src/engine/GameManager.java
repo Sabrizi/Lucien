@@ -38,6 +38,7 @@ public class GameManager implements Runnable {
         glfwSetKeyCallback(window.getWindow(), new KeyBoardHandler());
         glfwSetCursorPosCallback(window.getWindow(), new MousePosHandler());
         glfwSetMouseButtonCallback(window.getWindow(), new MouseButtonHandler());
+        glfwSetScrollCallback(window.getWindow(), new ScrollHandler());
 
         try {
             game.init();

@@ -7,6 +7,7 @@ import engine.math.Matrix4;
 import engine.math.Vector3;
 import lucien.Camera;
 import lucien.Lucien;
+import lucien.Settings;
 import lucien.enums.PlayerAction;
 import lucien.enums.PlayerState;
 
@@ -34,10 +35,10 @@ public class Player extends Entity {
         height = 5.0f;
 
         float[] vertices = new float[]{
-                -width / 2.0f, -height / 2.0f, 0.0f,
-                -width / 2.0f,  height / 2.0f, 0.0f,
-                 width / 2.0f,  height / 2.0f, 0.0f,
-                 width / 2.0f, -height / 2.0f, 0.0f,
+                -width / 2.0f, -height / 2.0f, Settings.gamePlane,
+                -width / 2.0f,  height / 2.0f, Settings.gamePlane,
+                 width / 2.0f,  height / 2.0f, Settings.gamePlane,
+                 width / 2.0f, -height / 2.0f, Settings.gamePlane,
         };
 
         byte[] indices = new byte[]{
@@ -61,8 +62,8 @@ public class Player extends Entity {
         attackAnimation = new SpriteAnimation(48, 51, shader, texture);
         dashAnimation = new SpriteAnimation(24, 28, shader, texture);
 
-        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
-//        Matrix4 pr_matrix = Matrix4.perspective(70, 16f/9f, -1.0f, 100f);
+//        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
+        Matrix4 pr_matrix = Matrix4.perspective(90.0f, 16.0f / 9.0f, 0.1f, -1000.0f);
         shader.setUniformMat4("pr_matrix", pr_matrix);
         shader.setUniform1i("tex", 1);
 
@@ -141,7 +142,7 @@ public class Player extends Entity {
         texture.unbind();
         shader.disable();
 
-        if(collider != null && renderCollider) {
+        if(collider != null && Settings.renderColliders) {
             collider.render();
         }
     }

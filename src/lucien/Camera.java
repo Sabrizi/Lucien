@@ -1,5 +1,6 @@
 package lucien;
 
+import engine.input.ScrollHandler;
 import engine.math.Matrix4;
 import engine.math.Vector3;
 import lucien.entities.Player;
@@ -26,7 +27,7 @@ public class Camera {
     }
 
     public static void update(){
-        trauma -= 0.05f;
+        trauma -= 0.025f;
         if(trauma < 0f) trauma = 0f;
         if(trauma > 1f) trauma = 1f;
 
@@ -36,8 +37,9 @@ public class Camera {
 
         shakeyCamOffset = new Vector3(offsetX, offsetY, 0f);
 
-        position.x  += (player.getPosition().x - position.x) * 0.1f;
-        position.y  += (player.getPosition().y - position.y) * 0.1f;
+        position.x += (player.getPosition().x - position.x) * 0.1f;
+        position.y += (player.getPosition().y - position.y) * 0.1f;
+        position.z += (float)ScrollHandler.yOffset * 3f;
     }
 
     public static void addTrauma(float value){
@@ -45,6 +47,6 @@ public class Camera {
     }
 
     public static Matrix4 getMvMatrix() {
-        return Matrix4.translate(new Vector3(-position.x, -position.y, 0f).add(shakeyCamOffset)).multiply(Matrix4.rotateZ(shakeyCamAngle));
+        return Matrix4.translate(new Vector3(-position.x, -position.y, position.z).add(shakeyCamOffset)).multiply(Matrix4.rotateZ(shakeyCamAngle));
     }
 }
