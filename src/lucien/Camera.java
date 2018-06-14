@@ -26,15 +26,13 @@ public class Camera {
     }
 
     public static void update(){
-        trauma -= 0.05f;
+        trauma -= 0.025f;
         if(trauma < 0f) trauma = 0f;
         if(trauma > 1f) trauma = 1f;
 
         shakeyCamAngle = maxShakeAngle * trauma * trauma * (random.nextFloat() * 2 - 1);
         float offsetX = maxOffset * trauma * trauma * (random.nextFloat() * 2 - 1);
         float offsetY = maxOffset * trauma * trauma * (random.nextFloat() * 2 - 1);
-        //offsetX = maxOffset * trauma^2 * randomFloatNegOneToOne();
-        //offsetY = maxOffset * trauma^2 * randomFloatNegOneToOne();
 
         shakeyCamOffset = new Vector3(offsetX, offsetY, 0f);
 
