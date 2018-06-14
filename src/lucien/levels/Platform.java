@@ -8,6 +8,7 @@ import engine.graphics.Texture;
 import engine.math.Matrix4;
 import engine.math.Vector3;
 import lucien.Camera;
+import lucien.Settings;
 
 public class Platform extends Entity {
 
@@ -18,10 +19,10 @@ public class Platform extends Entity {
         height = h;
 
         float[] vertices = new float[]{
-                -width / 2.0f, -height / 2.0f, 0.0f,
-                -width / 2.0f, height / 2.0f, 0.0f,
-                width / 2.0f, height / 2.0f, 0.0f,
-                width / 2.0f, -height / 2.0f, 0.0f,
+                -width / 2.0f, -height / 2.0f, Settings.gamePlane,
+                -width / 2.0f,  height / 2.0f, Settings.gamePlane,
+                 width / 2.0f,  height / 2.0f, Settings.gamePlane,
+                 width / 2.0f, -height / 2.0f, Settings.gamePlane,
         };
 
         byte[] indices = new byte[]{
@@ -40,7 +41,8 @@ public class Platform extends Entity {
 
         shader = Shader.shaders.get("basicShader");
 
-        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
+//        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
+        Matrix4 pr_matrix = Matrix4.perspective(90.0f, 16.0f / 9.0f, 1.0f, -1000.0f);
         shader.setUniformMat4("pr_matrix", pr_matrix);
 //        shader.setUniform1i("tex", 1);
 
@@ -64,7 +66,7 @@ public class Platform extends Entity {
         mesh.render();
 //        texture.unbind();
         shader.disable();
-        if(collider != null && renderCollider) {
+        if(collider != null && Settings.renderColliders) {
             collider.render();
         }
     }

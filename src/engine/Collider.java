@@ -7,6 +7,7 @@ import engine.math.Matrix4;
 import engine.math.Vector2;
 import engine.math.Vector3;
 import lucien.Camera;
+import lucien.Settings;
 import lucien.entities.Player;
 import lucien.levels.Platform;
 
@@ -170,10 +171,10 @@ public class Collider {
         corners[3] = new Vector3(right, bottom, entity.position.z);
 
         float[] vertices = new float[]{
-                corners[0].x, corners[0].y, 0.0f,
-                corners[1].x, corners[1].y, 0.0f,
-                corners[2].x, corners[2].y, 0.0f,
-                corners[3].x, corners[3].y, 0.0f,
+                corners[0].x, corners[0].y, Settings.foreGroundPlane,
+                corners[1].x, corners[1].y, Settings.foreGroundPlane,
+                corners[2].x, corners[2].y, Settings.foreGroundPlane,
+                corners[3].x, corners[3].y, Settings.foreGroundPlane,
         };
 
         corners[0] = corners[0].add(position);
@@ -187,8 +188,9 @@ public class Collider {
         };
         shader = Shader.shaders.get("boundsShader");
 
-        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
-        shader.setUniformMat4("pr_matrix", pr_matrix);
+//        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
+//        Matrix4 pr_matrix = Matrix4.perspective(90.0f, 16.0f / 9.0f, 0.1f, -1000.0f);
+        shader.setUniformMat4("pr_matrix", Settings.perspectiveMatrix);
 
         mesh = new Mesh(vertices, indices, null);
     }
@@ -212,10 +214,10 @@ public class Collider {
         corners[3] = new Vector3(right, bottom, 0f);
 
         float[] vertices = new float[]{
-                corners[0].x, corners[0].y, 0.0f,
-                corners[1].x, corners[1].y, 0.0f,
-                corners[2].x, corners[2].y, 0.0f,
-                corners[3].x, corners[3].y, 0.0f,
+                corners[0].x, corners[0].y, Settings.foreGroundPlane,
+                corners[1].x, corners[1].y, Settings.foreGroundPlane,
+                corners[2].x, corners[2].y, Settings.foreGroundPlane,
+                corners[3].x, corners[3].y, Settings.foreGroundPlane,
         };
 
         corners[0] = corners[0].add(position);
@@ -229,8 +231,9 @@ public class Collider {
         };
         shader = Shader.shaders.get("boundsShader");
 
-        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
-        shader.setUniformMat4("pr_matrix", pr_matrix);
+//        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
+//        Matrix4 pr_matrix = Matrix4.perspective(90.0f, 16.0f / 9.0f, 0.1f, -1000.0f);
+        shader.setUniformMat4("pr_matrix", Settings.perspectiveMatrix);
 
         mesh = new Mesh(vertices, indices, null);
     }

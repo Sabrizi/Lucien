@@ -23,7 +23,7 @@ public abstract class Entity {
     protected float width;
     protected float height;
 
-    public static boolean renderCollider = false;
+//    public static boolean renderCollider = true;
 
     public abstract void render();
 

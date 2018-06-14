@@ -4,6 +4,7 @@ import engine.Entity;
 import engine.GameManager;
 import engine.graphics.Shader;
 import engine.graphics.Window;
+import engine.input.ScrollHandler;
 import engine.math.Vector3;
 import lucien.entities.Player;
 import lucien.enums.PlayerAction;
@@ -17,6 +18,7 @@ import lucien.levels.Platform;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Set;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
@@ -58,8 +60,8 @@ public class Lucien implements IGameLogic {
 
     private void loadEntities() {
         player = new Player();
-        level.add(new Platform(new Vector3(0f,-4f,1.0f), 5f, 2f));
-        level.add(new Platform(new Vector3(-4f,0f,1.0f), 2f, 10f));
+        level.add(new Platform(new Vector3(0f, -4f, 1.0f), 5f, 2f));
+        level.add(new Platform(new Vector3(-4f, 0f, 1.0f), 2f, 10f));
 
 //        platform1 = new Platform(new Vector3(0f,-4f,1.0f), 5f, 2f);
 //        platform2 = new Platform(new Vector3(-4f,0f,1.0f), 2f, 10f);
@@ -89,7 +91,7 @@ public class Lucien implements IGameLogic {
             }
         });
 
-        if(glfwJoystickPresent(GLFW_JOYSTICK_1)) {
+        if (glfwJoystickPresent(GLFW_JOYSTICK_1)) {
             buttons = new byte[glfwGetJoystickButtons(GLFW_JOYSTICK_1).capacity()];
             hats = new byte[glfwGetJoystickHats(GLFW_JOYSTICK_1).capacity()];
             axes = new float[glfwGetJoystickAxes(GLFW_JOYSTICK_1).capacity()];
@@ -110,14 +112,21 @@ public class Lucien implements IGameLogic {
 
     @Override
     public void input(Window window) {
-        if(usingGamePad) {
+        if (usingGamePad) {
             checkGamePad();
         } else {
             checkKeyBoard(window);
         }
         checkMouse();
+        checkScroll();
     }
 
+    private void checkScroll() {
+        ScrollHandler.yOffset = 0;
+//        System.out.println(ScrollHandler.yOffset);
+    }
+
+    private int colliderToggleCounter = 0;
     private void checkKeyBoard(Window window) {
         Vector3 velocity = new Vector3();
         if (KeyBoardHandler.isKeyDown(GLFW_KEY_W)) {
@@ -138,15 +147,19 @@ public class Lucien implements IGameLogic {
 
         player.setVelocity(velocity.normalize());
 
-        if(KeyBoardHandler.isKeyDown(GLFW_KEY_ESCAPE)){
+        if (KeyBoardHandler.isKeyDown(GLFW_KEY_ESCAPE)) {
             glfwSetWindowShouldClose(window.getWindow(), true);
         }
 
-        if(KeyBoardHandler.isKeyDown(GLFW_KEY_LEFT_CONTROL) && KeyBoardHandler.isKeyDown(GLFW_KEY_C)){
-            Entity.renderCollider = !Entity.renderCollider;
+        if (KeyBoardHandler.isKeyDown(GLFW_KEY_LEFT_CONTROL)&& KeyBoardHandler.isKeyDown(GLFW_KEY_C)) {
+            colliderToggleCounter--;
+            if(colliderToggleCounter <= 0) {
+                Settings.renderColliders = !Settings.renderColliders;
+                colliderToggleCounter = 7;
+            }
         }
 
-        if(KeyBoardHandler.isKeyDown(GLFW_KEY_T)){
+        if (KeyBoardHandler.isKeyDown(GLFW_KEY_T)) {
             Camera.addTrauma(0.1f);
         }
     }
@@ -216,7 +229,7 @@ public class Lucien implements IGameLogic {
     @Override
     public void update(float interval) {
         player.update(interval);
-        for(Entity e : level){
+        for (Entity e : level) {
             e.update(interval);
         }
 //        platform1.update(interval);
@@ -226,7 +239,7 @@ public class Lucien implements IGameLogic {
     @Override
     public void render(Window window) {
         player.render();
-        for(Entity e: level){
+        for (Entity e : level) {
             e.render();
         }
 //        platform1.render();
