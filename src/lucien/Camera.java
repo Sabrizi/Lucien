@@ -33,8 +33,6 @@ public class Camera {
         shakeyCamAngle = maxShakeAngle * trauma * trauma * (random.nextFloat() * 2 - 1);
         float offsetX = maxOffset * trauma * trauma * (random.nextFloat() * 2 - 1);
         float offsetY = maxOffset * trauma * trauma * (random.nextFloat() * 2 - 1);
-        //offsetX = maxOffset * trauma^2 * randomFloatNegOneToOne();
-        //offsetY = maxOffset * trauma^2 * randomFloatNegOneToOne();
 
         shakeyCamOffset = new Vector3(offsetX, offsetY, 0f);
 
