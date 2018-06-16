@@ -70,8 +70,6 @@ public class Mesh {
     public void draw(){
         if(ibo > 0){
             glDrawElements(renderMethod, count, GL_UNSIGNED_BYTE, 0);
-//            glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_BYTE, 0);
-//            glDrawElements(GL_LINE_LOOP, count, GL_UNSIGNED_BYTE, 0);
         } else{
             glDrawArrays(GL_TRIANGLES, 0, count);
         }

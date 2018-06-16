@@ -19,11 +19,9 @@ public abstract class Entity {
     protected Vector3 position = new Vector3();
     protected Vector3 velocity = new Vector3();
     protected Shader shader;
-    protected float rot = 0;
+    protected float rotation = 0;
     protected float width;
     protected float height;
-
-//    public static boolean renderCollider = true;
 
     public abstract void render();
 

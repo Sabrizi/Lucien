@@ -12,18 +12,18 @@ import static org.lwjgl.opengl.GL11.*;
 public class Texture {
 
     private int width, height;
-    private int texture;
+    private int textureId;
 
     public int rows = 1;
     public int columns = 1;
     public int index = 0;
 
     public Texture(String path) {
-        texture = load(path);
+        textureId = load(path);
     }
 
     public Texture(String path, int rows, int columns){
-        texture = load(path);
+        textureId = load(path);
         this.rows = rows;
         this.columns = columns;
     }
@@ -60,7 +60,7 @@ public class Texture {
     }
 
     public void bind(){
-        glBindTexture(GL_TEXTURE_2D, texture);
+        glBindTexture(GL_TEXTURE_2D, textureId);
     }
 
     public void unbind(){
@@ -91,5 +91,9 @@ public class Texture {
 
     public int getColumns() {
         return columns;
+    }
+
+    public int getTextureId(){
+        return textureId;
     }
 }

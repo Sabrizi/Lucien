@@ -4,18 +4,14 @@ import engine.graphics.Collision;
 import engine.graphics.Mesh;
 import engine.graphics.Shader;
 import engine.math.Matrix4;
-import engine.math.Vector2;
 import engine.math.Vector3;
 import lucien.Camera;
 import lucien.Settings;
-import lucien.entities.Player;
-import lucien.levels.Platform;
 
 import java.util.ArrayList;
 
 import static org.lwjgl.opengl.GL11.GL_LINE_LOOP;
 import static org.lwjgl.opengl.GL11.GL_TRIANGLES;
-import static org.lwjgl.opengl.GL11.glTexParameteri;
 
 public class Collider {
 
@@ -241,31 +237,31 @@ public class Collider {
     public void update() {
         this.position = entity.position;
 
-        corners[0] = new Vector3(left, bottom, 0f).rotate(entity.rot).add(position);
-        corners[1] = new Vector3(left, top, 0f).rotate(entity.rot).add(position);
-        corners[2] = new Vector3(right, top, 0f).rotate(entity.rot).add(position);
-        corners[3] = new Vector3(right, bottom, 0f).rotate(entity.rot).add(position);
+        corners[0] = new Vector3(left, bottom, 0f).rotate(entity.rotation).add(position);
+        corners[1] = new Vector3(left, top, 0f).rotate(entity.rotation).add(position);
+        corners[2] = new Vector3(right, top, 0f).rotate(entity.rotation).add(position);
+        corners[3] = new Vector3(right, bottom, 0f).rotate(entity.rotation).add(position);
     }
 
     public void update(Vector3 vector) {
         this.position = vector;
 
-        corners[0] = new Vector3(left, bottom, 0f).rotate(entity.rot).add(position);
-        corners[1] = new Vector3(left, top, 0f).rotate(entity.rot).add(position);
-        corners[2] = new Vector3(right, top, 0f).rotate(entity.rot).add(position);
-        corners[3] = new Vector3(right, bottom, 0f).rotate(entity.rot).add(position);
+        corners[0] = new Vector3(left, bottom, 0f).rotate(entity.rotation).add(position);
+        corners[1] = new Vector3(left, top, 0f).rotate(entity.rotation).add(position);
+        corners[2] = new Vector3(right, top, 0f).rotate(entity.rotation).add(position);
+        corners[3] = new Vector3(right, bottom, 0f).rotate(entity.rotation).add(position);
     }
 
     public void render() {
         shader.enable();
         //Set uniforms
         Matrix4 ml_matrix = Matrix4.translate(this.position);
-        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(entity.rot));
+        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(entity.rotation));
 //            ml_matrix = ml_matrix.multiply(Matrix4.scale(scale.x, scale.y, scale.z));
 
         shader.setUniformMat4("ml_matrix", ml_matrix);
         shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
-//        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rot)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
+//        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rotation)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
 //            shader.setUniformMat4("ml_matrix", entity.getModelMatrix());
         mesh.setRenderMethod(GL_LINE_LOOP);
         mesh.render();

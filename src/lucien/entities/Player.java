@@ -65,7 +65,7 @@ public class Player extends Entity {
 //        Matrix4 pr_matrix = Matrix4.ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
         Matrix4 pr_matrix = Matrix4.perspective(90.0f, 16.0f / 9.0f, 0.1f, -1000.0f);
         shader.setUniformMat4("pr_matrix", pr_matrix);
-        shader.setUniform1i("tex", 1);
+        shader.setUniform1i("tex", texture.getTextureId());
 
         mesh = new Mesh(vertices, indices, tcs);
 
@@ -131,12 +131,12 @@ public class Player extends Entity {
         shader.enable();
         //Set uniforms
         ml_matrix = Matrix4.translate(position);
-//        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(rot));
+//        ml_matrix = ml_matrix.multiply(Matrix4.rotateZ(rotation));
         ml_matrix = ml_matrix.multiply(Matrix4.scale(flip, 1f, 1f));
 
         shader.setUniformMat4("ml_matrix", ml_matrix);
         shader.setUniformMat4("vw_matrix", Camera.getMvMatrix());
-//        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rot)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
+//        shader.setUniformMat4("ml_matrix", Matrix4.translate(position).multiply(Matrix4.rotateZ(rotation)).multiply(Matrix4.scale(2.0f, 2.0f, 0.0f)));
         texture.bind();
         mesh.render();
         texture.unbind();

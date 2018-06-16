@@ -28,4 +28,8 @@ public class SpriteAnimation {
         currentIndex++;
         if(currentIndex > endIndex) currentIndex = startIndex;
     }
+
+    public Texture getTextureAtlas() {
+        return textureAtlas;
+    }
 }

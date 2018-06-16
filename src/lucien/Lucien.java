@@ -4,6 +4,8 @@ import engine.Entity;
 import engine.GameManager;
 import engine.graphics.Shader;
 import engine.graphics.Window;
+import engine.gui.GUIElement;
+import engine.gui.GUIImageComponent;
 import engine.input.ScrollHandler;
 import engine.math.Vector3;
 import lucien.entities.Player;
@@ -39,6 +41,7 @@ public class Lucien implements IGameLogic {
     public Player player;
     public static GameManager manager;
 
+    public ArrayList<GUIElement> guiElements = new ArrayList<>();
 
     //TODO: Remove this later. It's just for collision testing right now
     public static ArrayList<Entity> level = new ArrayList<>();
@@ -53,9 +56,22 @@ public class Lucien implements IGameLogic {
         loadShaders();
         loadUniforms();
         loadEntities();
+        loadGUIElements();
 
         glActiveTexture(GL_TEXTURE1);
         Camera.init(player);
+    }
+
+    private void loadGUIElements(){
+        GUIElement test1 = new GUIElement(new Vector3(-10f, -7.5f, 0f));
+        GUIImageComponent imageComponent = new GUIImageComponent(new Vector3(), 0.0f, "guiImageShader", "src/lucien/res/test.png", 10f, 2f);
+        test1.addComponent(imageComponent);
+        guiElements.add(test1);
+
+        GUIElement test2 = new GUIElement(new Vector3(12f, 6f, 0f));
+        GUIImageComponent imageComponent2 = new GUIImageComponent(new Vector3(), 0.0f, "guiImageShader", "src/lucien/res/test.png", 4f, 4f);
+        test2.addComponent(imageComponent2);
+        guiElements.add(test2);
     }
 
     private void loadEntities() {
@@ -76,6 +92,7 @@ public class Lucien implements IGameLogic {
         Shader.loadShader("playerShader", "src/lucien/shaders/player.vert", "src/lucien/shaders/player.frag");
         Shader.loadShader("basicShader", "src/lucien/shaders/basic.vert", "src/lucien/shaders/basic.frag");
         Shader.loadShader("boundsShader", "src/lucien/shaders/collider.vert", "src/lucien/shaders/collider.frag");
+        Shader.loadShader("guiImageShader", "src/lucien/shaders/guiImageShader.vert", "src/lucien/shaders/guiImageShader.frag");
     }
 
     private void initGamePad() {
@@ -232,6 +249,10 @@ public class Lucien implements IGameLogic {
         for (Entity e : level) {
             e.update(interval);
         }
+
+        for(GUIElement e: guiElements){
+            e.update();
+        }
 //        platform1.update(interval);
 //        platform2.update(interval);
     }
@@ -240,6 +261,9 @@ public class Lucien implements IGameLogic {
     public void render(Window window) {
         player.render();
         for (Entity e : level) {
+            e.render();
+        }
+        for(GUIElement e: guiElements){
             e.render();
         }
 //        platform1.render();
